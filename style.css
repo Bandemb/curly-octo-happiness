@@ -1,0 +1,490 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+     :root {
+        --white: #f5f5c3;
+        --black: #141414;
+        --orange: #FF9700;
+        --red: #E50914;
+        --green: #2ecc71;
+        --blue: #3498db;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--white);
+    }
+    
+    body::before {
+        content: 'ZEN';
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 20em;
+        letter-spacing: 30px;
+        font-weight: 700;
+        color: transparent;
+        -webkit-text-stroke: 4px var(--orange);
+    }
+    
+    .top-logo {
+        top: 10px;
+        position: fixed;
+        left: 10px;
+        width: 1rem;
+        height: 1rem;
+    }
+    
+    .top-logo img {
+        position: sticky;
+        left: 10px;
+        width: 600px;
+        filter: blur(2px);
+        background: transparent;
+        cursor: pointer;
+        transition: all 1s ease-in-out;
+        object-fit: cover;
+    }
+    
+    .top-logo img:hover {
+        filter: blur(0px);
+    }
+    
+    #tab {
+        position: fixed;
+        color: #ffffff;
+        font-size: 24px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color: #3498db;
+        border-radius: 24px;
+        padding: 10px 20px;
+        top: 10px;
+        right: 10px;
+        text-align: center;
+        animation: clip-path 1s;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        transition: background-color 1s;
+    }
+    
+    @keyframes clip-path {
+        0% {
+            clip-path: circle(0% at 0% 0%);
+            background-color: #3498db;
+        }
+        50% {
+            clip-path: circle(50% at 0% 0%);
+            background-color: #15a6e9;
+        }
+        100% {
+            clip-path: circle(100% at 0% 0%);
+            background-color: #2ecc71;
+        }
+    }
+    
+    #tab:hover {
+        background-color: #ffffff;
+        color: var(--blue);
+    }
+    
+    #tab2 {
+        position: fixed;
+        color: #ffffff;
+        font-size: 24px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color: var(--orange);
+        border-radius: 24px;
+        padding: 10px 20px;
+        top: 10px;
+        right: 120px;
+        text-align: center;
+        animation: clip-path 1s ease-out;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        transition: background-color 1s;
+    }
+    
+    @keyframes clip-path {
+        0% {
+            clip-path: circle(0% at 0% 0%);
+            background-color: #3498db;
+        }
+        50% {
+            clip-path: circle(50% at 0% 0%);
+            background-color: #15a6e9;
+        }
+        100% {
+            clip-path: circle(100% at 0% 0%);
+            background-color: #2ecc71;
+        }
+    }
+    
+    #tab2:hover {
+        background-color: #ffffff;
+        color: var(--orange);
+    }
+    
+    #selection {
+        display: none;
+        position: relative;
+    }
+    
+    .container {
+        position: fixed;
+        height: 75%;
+        width: 30%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        z-index: 12;
+        box-shadow: 0 0 20px #63636371, 0 0 50px #636363, 0 0 500px #636363;
+    }
+    
+    .container .main h1 {
+        pointer-events: none;
+        top: 10px;
+        position: relative;
+        font-size: 50px;
+        text-align: center;
+        color: #3498db;
+        font-weight: 600;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #one {
+        pointer-events: none;
+        color: #ffffff;
+    }
+    
+    #two {
+        pointer-events: none;
+        color: #2ecc71;
+    }
+    
+    form {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px 40px;
+        margin-top: 80px;
+    }
+    
+    form input[type="number"],
+    input[type="password"] {
+        position: relative;
+        border-radius: 24px;
+        font-size: 18px;
+        width: 200px;
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        border: 2px solid var(--green);
+        outline: none;
+        padding: 10px 20px;
+        margin: 10px;
+        background: transparent;
+        backdrop-filter: blur(8px);
+        transition: all 0.5s ease-in-out;
+        color: white;
+    }
+    
+    form input[type="number"]:focus,
+    input[type="password"]:focus {
+        padding: 10px 40px;
+        width: 250px;
+        border: 2px solid var(--blue);
+    }
+    
+    form input[type="number"]:hover,
+    input[type="password"]:hover {
+        filter: brightness(1);
+        background-color: #808080b0;
+        border: 2px solid var(--blue);
+    }
+    
+    input[type="number"]::before {
+        content: 'hi';
+        font-size: large;
+        color: aliceblue;
+    }
+    
+    input[type="number"]::-webkit-inner-spin-button,
+     ::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+    
+    #button2 {
+        border-radius: 20px;
+        font-size: 20px;
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        border: 2px solid var(--green);
+        outline: none;
+        padding: 10px 20px;
+        margin: 10px;
+        background: transparent;
+        backdrop-filter: blur(8px);
+        transition: all 0.5s;
+        color: #555;
+        background-color: #2ecc71;
+    }
+    
+    #button2:hover {
+        background-color: #3498db;
+        border: 2px solid var(--blue);
+        color: white;
+    }
+    
+    #button3 {
+        border-radius: 20px;
+        font-size: 18px;
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        border: 2px solid var(--red);
+        outline: none;
+        padding: 10px 20px;
+        margin: 10px;
+        background: transparent;
+        backdrop-filter: blur(8px);
+        transition: all 0.5s;
+        color: #ffffff;
+        background-color: var(--red);
+    }
+    
+    #button3:hover {
+        background-color: white;
+        border: 2px solid white;
+        color: var(--red);
+    }
+    
+    a {
+        color: white;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-decoration: none;
+        padding: 10px 10px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    
+    #selection2 {
+        display: none;
+        position: relative;
+    }
+    
+    .container2 {
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        height: 75%;
+        width: 30%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        z-index: 12;
+        box-shadow: 0 0 20px #63636371, 0 0 50px #636363, 0 0 500px #636363;
+        overflow: hidden;
+    }
+    
+    .container2 .main2 h1 {
+        position: relative;
+        pointer-events: none;
+        top: 10px;
+        position: relative;
+        font-size: 50px;
+        text-align: center;
+        color: #3498db;
+        font-weight: 600;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #one2 {
+        position: relative;
+        pointer-events: none;
+        color: #ffffff;
+    }
+    
+    #two2 {
+        position: relative;
+        pointer-events: none;
+        color: #2ecc71;
+    }
+    
+    form {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 1em 2em;
+        margin: 0;
+    }
+    
+    form img {
+        position: relative;
+        height: 10rem;
+        width: 10rem;
+    }
+    
+    .next::before {
+        content: '<';
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        left: -80px;
+        top: -30px;
+        color: #1fc419;
+        font-size: 40px;
+        font-weight: 900;
+        cursor: pointer;
+    }
+    
+    .next::after {
+        content: '>';
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        right: -80px;
+        top: -30px;
+        color: #1a6ae2;
+        font-size: 40px;
+        font-weight: 900;
+        cursor: pointer;
+    }
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------*/
+    
+    .mach {
+        position: relative;
+    }
+    
+    .mach button {
+        position: relative;
+        display: inline-block;
+    }
+    
+    #button12,
+    #button22 {
+        position: relative;
+        border-radius: 20px;
+        font-size: 20px;
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        outline: none;
+        padding: 10px 20px;
+        margin: 30px;
+        background: transparent;
+        backdrop-filter: blur(8px);
+        transition: all 0.5s;
+        color: #ffffff;
+    }
+    
+    #button12 {
+        border: 2px solid var(--blue);
+        background-color: var(--blue);
+    }
+    
+    #button12:hover {
+        background-color: white;
+        border: 2px solid white;
+        color: var(--blue);
+    }
+    
+    #button22 {
+        border: 2px solid var(--red);
+        background-color: var(--red);
+    }
+    
+    #button22:hover {
+        background-color: white;
+        border: 2px solid white;
+        color: var(--red);
+    }
+    
+    #button13 {
+        position: relative;
+        border-radius: 20px;
+        font-size: 18px;
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        border: 2px solid var(--orange);
+        outline: none;
+        padding: 10px 20px;
+        margin: 70px;
+        background: transparent;
+        backdrop-filter: blur(8px);
+        transition: all 0.5s;
+        color: #ffffff;
+        background-color: var(--orange);
+    }
+    
+    #button13:hover {
+        background-color: white;
+        border: 2px solid white;
+        color: var(--orange);
+    }
+    
+    a {
+        color: white;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-decoration: none;
+        padding: 10px 10px;
+        display: flex;
+        justify-content: space-evenly;
+    }
